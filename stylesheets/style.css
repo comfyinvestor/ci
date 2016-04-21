@@ -1,0 +1,157 @@
+/*Color Palette: 
+#28465C (40-70-92)
+#A6C8E1 (166-200-225)
+#60A7DC (96-167-220)
+#44525C (68-82-92)
+#4A80A9 (74-128-169);*/
+
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin top by nav height */
+  margin-top: 80px;	
+  /* Margin bottom by footer height */
+  margin-bottom: 240px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 180px;
+  background-color: #f5f5f5;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #28465C;
+  color: #efefef;
+}
+
+.footer a {
+	color: #a6c8e1;
+}
+
+
+
+
+.container {
+	max-width: 960px;
+}
+
+.btn-lg {
+}
+
+.education {
+	background-color: #A6C8E1;
+	padding-top:20px;
+}
+
+.education li {
+	height: 250px;
+}
+
+.research {
+
+}
+
+.navbar img {
+	max-height: 21px;
+	float: left;
+	margin-right: 5px;
+}
+
+.navbar {
+	background-color: #4A80A9;
+}
+
+.navbar a {
+	color: #efefef;
+}
+
+.navbar a:hover {
+	color:#fff;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover,
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+	background-color: #204d74;
+	color: #fff;
+}
+
+.navbar-toggle .icon-bar {
+	background-color: #efefef;
+}
+
+
+/*------------ Tablets & Desktop ------------*/
+@media only screen and (min-width: 992px) {
+	.education .col-sm-4 {width: 30%;}
+	.education .col-sm-offset-1 {margin-left: 5%;}
+	.education .first-edu {margin-left: 0px;}
+}
+
+/*------------ Tablets ------------*/
+@media only screen and (min-width: 768px) {
+	.education .col-sm-4 {width: 30%;}
+	.education .col-sm-offset-1 {margin-left: 5%;}
+	.education .first-edu {margin-left: 0px;}
+}
+
+@media only screen and (max-width: 768px) {
+	.footer {height: 360px;}
+	body {margin-bottom: 400px;}
+}
+
+/*------------ Mobile Phones ------------*/
+/*@media only screen and (min-width: 480px) {
+}*/
+
+
+/*------------ Failed Media Queries for a symmetric 3 box section ------------*/
+
+/*.education .col-md-4 {
+		max-width: 266px;
+}
+.education .col-sm-4 {
+		max-width: 200px;
+}
+*/
+
+/*
+@media only screen and (min-width: 992px) {
+	.education .col-md-4 {
+		min-height: 300px;
+	}
+}
+@media only screen and (max-width: 992px) {
+	.education .col-md-4 {
+		max-width: 206px;
+		min-height: 300px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	body {margin-bottom: 400px;}
+	.footer {height: 400px;}
+	.education .col-md-4 {
+	}
+}
+/*How to do the education section for small screens?
+@media only screen and (max-width: 768px) {
+	body {margin-bottom: 400px;}
+	.footer {height: 400px;}
+	.education .col-md-4 {max-width: 200px;} 
+}
+@media only screen and (max-width: 480px) {
+	.col-sm-4 {max-width: 133px; }
+}
+*/
