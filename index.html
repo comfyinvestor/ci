@@ -23,7 +23,7 @@
     <div class='navbar navbar-fixed-top'>
         <div class='container'>
             <div class='navbar-header'>
-                <a href="/" class='navbar-brand'>
+                <a href="#" class='navbar-brand'>
                     <img class="logo" src="http://imgur.com/5jYrDkK.png" alt="ComfyInvestor Logo">
                     comfyinvestor
                 </a>
@@ -37,13 +37,21 @@
             </div>
             <!--class='nav navbar-nav navbar-right dropdown-menu navbar-collapse'-->
             <ul role="menu" class='nav navbar-nav navbar-right dropdown-menu navbar-collapse' aria-labelledby="ham-nav">
-                <li><a href="/research">research</a></li>
-                <li><a href="/education">education</a></li>
-                <li><a href="/blog">blog</a></li>
+                <li><a href="/chart-analysis">chart analysis</a></li>
+                <li><a href="/guides">guides</a></li>
+                <li><a href="/about-us">about</a></li>
             </ul>
         </div>
     </div>
-
+    <!--
+    <div class="container collar-nav">
+        <ul class="list-unstyled">
+            <li class="col-md-4"><a href="/research">research</a></li>
+            <li class="col-md-4"><a href="/education">education</a></li>
+            <li class="col-md-4"><a href="/blog">blog</a></li> 
+        </ul>
+    </div>
+-->
 <!-- Practice Navigation -->
 <!--
 <div class="dropdown">
@@ -77,18 +85,20 @@
             <div class='row well'>
                 <div class='col-md-6 text-center'>
                     <h2>stock chart analysis</h2>
-                    <p>search any stock to spot proper patterns and buy points</p>
+                    <p>search any stock to find chart patterns and buy points</p>
                     <form class='form-inline' role=form>
-                        <div style="margin-top:40px;" class='form-group'>
+                        <div class='form-group'>
                             <input type="text" class="form-control" id="stock" placeholder="TSLA">
-                            <button type='submit' class='btn btn-lg btn-primary'>search</button>
+                            <button type='submit' class='btn btn-lg btn-primary stock-search-home'>search</button>
                         </div>
                     </form>
                     <br><!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
                     <!--
                     <p>or go to an existing portfolio:</p>
                     -->
+                    <!--
                     <button type='button' class='btn btn-sm btn-default'>my portfolio</button>
+                    -->
                 </div>
                 <div class='col-md-6 hidden-sm hidden-xs'><!-- Replace w/ smaller/better mobile image on xs devices (visible-* class) -->
                    <img style="max-width:375px;" src="images/stock-pattern-analysis-preview.png">
@@ -123,7 +133,9 @@
 <!-- Blog Teaser Section -->  
     <div class='container'>
         <div class='row'>
+            <!--
             <h2>Recent Posts</h2>
+            -->
             <div>
                 <h3>How to Recognize a Cup Base</h3>
                 <div class='container'>
@@ -132,10 +144,10 @@
                 </div>
             </div>
             <div>
-                <h3>Getting Comfortable with Price Corrections in Stock Charts</h3>
+                <h3>Understanding Price Corrections in Stocks</h3>
                 <div class='container'>
-                    <p><d/p>
-                    <img>
+                    <p>The cup with handle is one of the most common stock chart patterns. This guide covers in depth which key traits investors should look for in all cup with handles, as well as other traits that will help investors spot exceptional patterns.</p>
+                    <img>   
                 </div>
             </div>
             <!--
@@ -162,9 +174,9 @@
                 <div class='row'>
                   <div class='col-sm-4 col-xs-12'>
                     <h4>Our Philosophy</h4>
-                    <p>investing successfully can change your life</p>
-                    <p>learning to invest should be easy</p>
-                    <p>an educated investor is a comfy investor</p>
+                    <p>investing can change your life<br>
+                    learning to invest should be easy<br>
+                    we want to make investing comfy</p>
                     <!-- comfy is the best way to learn?-->
                     <!--
                     <a href='register.html'>Make and account today</a>!</p>
@@ -172,22 +184,22 @@
                     <p><a href='about.html'>More About Us <i class='glyphicon glyphicon-arrow-right'></i></a></p>
                   </div>
 
-                  <div class='col-sm-4 col-xs-6'>
+                  <div class='col-sm-2 col-sm-offset-1 col-xs-6'>
                     <h4>Links</h4>
                     <ul class='list-unstyled'>
                       <li><a href='#'>Home</a></li>
-                      <li><a href='#'>Chart Analysis</a></li>
-                      <li><a href='#'>Guides</a></li>
-                      <li><a href='#'>About</a></li>
+                      <li><a href='/chart-analysis'>Chart Analysis</a></li>
+                      <li><a href='/guides'>Guides</a></li>
+                      <li><a href='/about-us'>About</a></li>
                       <!--
                       <li><a href='#'>My Portfolio</a></li>
                       <li><a href='#'>Glossary</a></li>
                       -->
                     </ul>
                   </div>
-
+<!--
                   <div class='clearfix visible-xs'></div>
-
+-->
                   <!--
                   <div class='col-sm-2 col-xs-6'>
                     <h4>Stay in Touch</h4>
@@ -202,7 +214,7 @@
                   </div>
                   -->
 
-                  <div class='col-sm-4 col-xs-6'>
+                  <div class='col-sm-4 col-sm-offset-1 col-xs-6'>
                     <h4>Contact Us</h4>
                     <ul class='list-unstyled'>
                       <li><i class='glyphicon glyphicon-globe'></i> Santa Barbara, CA</li>
