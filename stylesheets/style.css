@@ -19,6 +19,12 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 240px;
 }
+
+h1, h2, h3, h4 {
+  font-family: 'Gentium Book Basic', serif;
+}
+
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -38,6 +44,11 @@ body {
 
 .form-group {
 	margin-top:10px;
+}
+
+.ca-callout-left {
+	margin:auto;
+	margin-top:20px;
 }
 
 .collar-nav li {
