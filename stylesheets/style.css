@@ -53,6 +53,10 @@ table {
 	border-spacing: 0;
 }
 
+
+/**********************************************/
+/*                   Basic                    */
+/**********************************************/
 /* Basic */
 
 html {
@@ -96,13 +100,24 @@ input {
 
 
 
+/**********************************************/
+/*                    Navbar                  */
+/**********************************************/
 
 /* Navbar */
+
 .navbar {
 	background-color: #4A80A9;
-	height: 100px;
+	height: 80px;
 	position:absolute;
+	padding-top:0px;
 }
+
+
+.navbar.navbar-fixed-top{
+	margin-bottom:0px;
+}
+
 
 .navbar-header{
 	display:block;
@@ -148,6 +163,8 @@ input {
 }
 
 
+/* Ham Nav */
+
 .nav>li>a:focus,
 .nav>li>a:hover,
 .nav .open>a,
@@ -164,18 +181,11 @@ input {
 	background-color: #efefef;
 }
 
-.navbar.navbar-fixed-top{
-	margin-bottom:0px;
-}
-
-.footer ul {
-	margin-bottom: 0px;
-}
-
 
 /**********************************************/
-/*                Search Blocks               */
+/*          Home Page: Search Block           */
 /**********************************************/
+
 img.pattern-finder-preview {
 	max-width:350px;
 	display:block;
@@ -220,6 +230,8 @@ img.pattern-finder-preview {
 	max-width: 960px;
 }
 
+
+/* Education Section (hidden currently)
 .education {
 	background-color: #A6C8E1;
 	padding-top:20px;
@@ -228,7 +240,7 @@ img.pattern-finder-preview {
 .education li {
 	height: 250px;
 }
-
+*/
 
 
 
@@ -253,6 +265,14 @@ img.pattern-finder-preview {
 .footer a {
 	color: #a6c8e1;
 }
+
+
+
+/* More footer styles */
+.footer ul {
+	margin-bottom: 0px;
+}
+
 
 
 
