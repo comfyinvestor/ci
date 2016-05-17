@@ -6,6 +6,52 @@
 #4A80A9 (74-128-169);*/
 
 /* Clear Browser */
+/* This should be unnecessary with Bootstrap 
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 /* Basic */
 
@@ -20,13 +66,34 @@ body {
   margin-bottom: 240px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Gentium Book Basic', serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+	font-size: 24px;
 }
 
 p, li {
   font-family: 'Work Sans', sans-serif;
+  line-height: 1.2;
 }
+
+input {
+
+  font-family: 'Work Sans', sans-serif;
+  /*font: 11px BlinkMacSystemFont;*/
+}
+
 
 
 
@@ -68,6 +135,8 @@ p, li {
 	display:inline-block;
 	float:right;
 	width:100px;
+	font-family: 'Work Sans', sans-serif;
+    font-weight: 150px;
 }
 
 .navbar a {
@@ -99,16 +168,40 @@ p, li {
 	margin-bottom:0px;
 }
 
+.footer ul {
+	margin-bottom: 0px;
+}
 
-/* Other Stuff Organize ME --------------------------------------------*/
+
+/**********************************************/
+/*                Search Blocks               */
+/**********************************************/
+img.pattern-finder-preview {
+	max-width:350px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 15px 0;
+}
+
 .form-group {
 	margin-top:10px;
 }
 
 .stock-search-content {
 	margin:auto;
-	margin-top:20px;
+	margin-top:30px;
 }
+
+.stock-search-home {
+	display: block;
+	text-align:center;
+	margin: 20px auto;
+}
+
+
+/* Other Stuff Organize ME -------------------*/
+
 
 .collar-nav li {
 	display:inline-block;
@@ -136,11 +229,6 @@ p, li {
 	height: 250px;
 }
 
-.stock-search-home {
-	display: block;
-	text-align:center;
-	margin: 20px auto;
-}
 
 
 
@@ -169,6 +257,9 @@ p, li {
 
 
 
+/*********************************************/
+/*               Media Queries               */
+/*********************************************/
 
 /*------------ Tablets & Desktop ------------*/
 @media only screen and (min-width: 992px) {
