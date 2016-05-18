@@ -5,10 +5,23 @@
 var buildData = {
   // Determine the correct data url
   getUrl: function(chartType) {
+    /*
     return chartType === 'stock' ? 
       'https://www.quandl.com/api/v3/datasets/WIKI/' + 
       document.getElementById('ticker-textbox').value.toString().toUpperCase() + 
       '.json?api_key=fyWKH12nMF4VuWFaXARN&limit=100&collapse=weekly' :
+      'https://www.quandl.com/api/v3/datasets/YAHOO/INDEX_GSPC.json?api_key=fyWKH12nMF4VuWFaXARN&limit=100';
+    */
+    var today = new Date();
+    var last = new Date(today.getYear - 2, today.getMonth, today.getDate);
+    return chartType === 'stock' ?
+      'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22' +
+      document.getElementById('ticker-textbox').value.toString().toUpperCase() +
+      '%22%20and%20startDate%20%3D%20%22' +
+      last.getYear + '-' + last.getMonth + '-' + last.getDate +
+      '%22%20and%20endDate%20%3D%20%22' +
+      today.getYear + '-' + today.getMonth + '-' + today.getMonth +
+      '%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=' :
       'https://www.quandl.com/api/v3/datasets/YAHOO/INDEX_GSPC.json?api_key=fyWKH12nMF4VuWFaXARN&limit=100';
   },
   
@@ -19,19 +32,52 @@ var buildData = {
   
   // Format the parsed data
   formatData: function(chartType, dataset) {
+    /*
     var reformattedStockData = dataset.data.reduce(function(result, dayArrayData) {
-    // result = [ adjOpen, adjHigh, adjLow, adjClose, date, volume ]
-    result[4].unshift([ dayArrayData[0].slice(0, 4), dayArrayData[0].slice(5, 7), dayArrayData[0].slice(8) ]);
-    result[0].unshift(dayArrayData[chartType === 'stock' ? 8 : 1]);
-    result[1].unshift(dayArrayData[chartType === 'stock' ? 9 : 2]);
-    result[2].unshift(dayArrayData[chartType === 'stock' ? 10 : 3]);
-    result[3].unshift(dayArrayData[chartType === 'stock' ? 11 : 4]);
-    result[5].unshift(dayArrayData[5]);
-    return result;
-  }, [ [], [], [], [], [], [] ]);
-  
-  reformattedStockData[6] = dataset;
-  return reformattedStockData;
+      // result = [ adjOpen, adjHigh, adjLow, adjClose, date, volume ]
+      result[4].unshift([ dayArrayData[0].slice(0, 4), dayArrayData[0].slice(5, 7), dayArrayData[0].slice(8) ]);
+      result[0].unshift(dayArrayData[chartType === 'stock' ? 8 : 1]);
+      result[1].unshift(dayArrayData[chartType === 'stock' ? 9 : 2]);
+      result[2].unshift(dayArrayData[chartType === 'stock' ? 10 : 3]);
+      result[3].unshift(dayArrayData[chartType === 'stock' ? 11 : 4]);
+      result[5].unshift(dayArrayData[5]);
+      return result;
+    }, [ [], [], [], [], [], [] ]);
+
+    reformattedStockData[6] = dataset;
+    return reformattedStockData;
+    */
+    var reformattedStockData = [ [], [], [], [], [], [] ];
+    var week = [];
+    
+    dataset.quote.results.quote.forEach(function(dayObjectData) { 
+      var open = dayObjectData.Open * dayObjectData.Adj_Close / dayObjectData.Close;
+      var high = dayObjectData.High * dayObjectData.Adj_Close / dayObjectData.Close;
+      var low = dayObjectData.Low * dayObjectData.Adj_Close / dayObjectData.Close;
+      var close = dayObjectData.Adj_Close;
+      var date = dayObjectData.Date;
+      var vol = dayObjectData.Volume;
+      
+      if (Date(date).getDay === 1 && week.length > 0) {
+        for (let i = 0; i < week.length; i++) reformattedStockData[i] = week[i];
+        week[0] = open;
+        week[1] = high;
+        week[2] = low;
+        week[3] = close;
+        week[4] = date.split('-');
+        week[5] = vol;
+      }
+      
+      if (week[0] === undefined) week[0] = open;
+      if (week[1] === undefined || high > week[1]) week[1] = high;
+      if (week[2] === undefined || low < week[2]) week[2] = low;
+      week[3] = close;
+      week[4] = date.split('-');
+      week[5] = week[5] === undefined ? vol : week[5] + vol;
+    });
+    
+    reformattedStockData[6] = dataset;
+    return reformattedStockData;
   }
 };
 
