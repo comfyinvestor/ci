@@ -14,15 +14,14 @@ var buildData = {
     */
     var today = new Date();
     var last = new Date(today.getYear - 2, today.getMonth, today.getDate);
-    return chartType === 'stock' ?
-      'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22' +
-      document.getElementById('ticker-textbox').value.toString().toUpperCase() +
+    var ticker = chartType === 'stock' ? document.getElementById('ticker-textbox').value.toString().toUpperCase() : '^GSPC';
+    return 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22' +
+      ticker +
       '%22%20and%20startDate%20%3D%20%22' +
       last.getYear + '-' + last.getMonth + '-' + last.getDate +
       '%22%20and%20endDate%20%3D%20%22' +
       today.getYear + '-' + today.getMonth + '-' + today.getMonth +
-      '%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=' :
-      'https://www.quandl.com/api/v3/datasets/YAHOO/INDEX_GSPC.json?api_key=fyWKH12nMF4VuWFaXARN&limit=100';
+      '%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=';
   },
   
   // Parse the response data from the http request
@@ -50,7 +49,7 @@ var buildData = {
     var reformattedStockData = [ [], [], [], [], [], [] ];
     var week = [];
     
-    dataset.quote.results.quote.forEach(function(dayObjectData) { 
+    dataset.query.results.quote.forEach(function(dayObjectData) { 
       var open = dayObjectData.Open * dayObjectData.Adj_Close / dayObjectData.Close;
       var high = dayObjectData.High * dayObjectData.Adj_Close / dayObjectData.Close;
       var low = dayObjectData.Low * dayObjectData.Adj_Close / dayObjectData.Close;
@@ -101,8 +100,9 @@ var buildCharts = {
     // Handle stock chart layout
     stockFig.layout.margin = {l: 60, r: 30, t: 50, b: 30};
     stockFig.layout.yaxis = {title: chartType === 'stock' ? 'Adjusted Stock Price ($)     ' : 'Price ($)     '};
-    stockFig.layout.title = chartType === 'stock' ? formattedData[6].name.slice(0, formattedData[6].name.indexOf(')') + 1) + ' - Weekly' : 'S&P 500 - Daily';
-
+    //stockFig.layout.title = chartType === 'stock' ? formattedData[6].name.slice(0, formattedData[6].name.indexOf(')') + 1) + ' - Weekly' : 'S&P 500 - Daily';
+    stockFig.layout.title = chartType === 'stock' ? formattedData[6].query.results.quote[0].Symbol + ' - Weekly' : 'S&P 500 - Weekly';
+    
     // Get stock patterns
     var patterns = patternSearchFunc(formattedData, cloneFunc);
     
