@@ -13,7 +13,9 @@
     <!--<link rel="stylesheet" href="stylesheets/chart-analysis.css">
     -->
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:700' rel='stylesheet' type='text/css'>
 
     <!-- Favicons -->
     <link href="assets/favicon.jpg" rel="icon" type="image/x-icon" />
@@ -43,18 +45,22 @@
                 </button>
               -->
             <ul class="list-unstyled desktop-brow-nav">
+                
                 <li>
-                    <div id="search-container" class="nav-search">
+                    <div class="nav-search-box">
                       <div>
-                        <div>
-                          <input type="text" id="ticker-textbox" placeholder="Example: FB"/>
+                        <div class="nav-search-icon">
+                          <i id="ticker-submit-button" class="glyphicon glyphicon-search button"></i>
                         </div>
-                        <i id="ticker-submit-button" class="material-icons md-36 button">search</i>
+                        <div>
+                          <input class="form-control nav-search" type="text" id="ticker-textbox" placeholder="Example: FB"/>
+                        </div>
                       </div>
                     </div>
                   <!--
                   <input type="text" class="form-control nav-search" id="stock" placeholder="TSLA"><i class="glyphicon glyphicon-search"></i>-->
                 </li>
+                
                 <li><a href="about.html">about</a></li>
                 <li><a href="guides.html">guides</a></li>
                 <li><a href="chart-analysis.html">chart analysis</a></li>
@@ -70,7 +76,7 @@
             -->
 
         </div>
-            <!-- Cushion? -->
+            <!-- Border/Shadowsberg -->
     <div class="banner"></div>
 
     </div>
@@ -113,9 +119,32 @@
 
     <!-- Charts -->
     <section id="section" class="container">
-      <div id="chart-box">
-        <div id="ohlc-chart" class="chart"></div>
-        <div id="volume-chart" class="chart"></div>
+      <div class="col col-md-8">
+        <div id="chart-box">
+          <div id="ohlc-chart" class="chart"></div>
+          <hr>
+          <div id="volume-chart" class="chart"></div>
+        </div>
+      </div>
+      <div class="col col-md-4">
+        <div class="chart-summary">
+          <h2>Key Information</h2>
+          <ul class="list-unstyled">
+            <li>Next Buy Point</li>
+            <li>Prior Uptrend %</li>
+            <li>Prior Uptrend Up/Down Volume Ratio</li>
+            <li>Prior Uptrend Volume vs Avg Ratio</li>
+            <li>Pattern Depth</li>
+            <li>Pattern Duration</li>
+            <li>Pattern Volitility</li>
+            <li>Pattern Total Up/Down Volume Ratio</li>
+            <li>Pattern Left-Side Up/Down Volume Ratio</li>
+            <li>Pattern Left-Side Volume vs Avg Ratio</li>
+            <li>Pattern Right-Side Up/Down Volume Ratio</li>
+            <li>Pattern Right-Side Volume vs Avg Ratio</li>
+
+          </ul>
+        </div>
       </div>
     </section>
 

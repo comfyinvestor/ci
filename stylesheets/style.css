@@ -87,6 +87,10 @@ h3 {
 	font-size: 24px;
 }
 
+h4 {
+	font-size: 18px;
+}
+
 p, li {
   font-family: 'Work Sans', sans-serif;
   line-height: 1.2;
@@ -149,9 +153,20 @@ input {
 .nav-search {
 	display:inline-block;
 	float:right;
-	width:100px;
+	width:120px;
 	font-family: 'Work Sans', sans-serif;
     font-weight: 150px;
+    margin-right: 15px;
+}
+
+.nav-search-box{
+	min-width:160px;
+}
+
+.nav-search-icon {
+	display:inline-block;
+	float:right;
+	margin-top:4px;
 }
 
 .navbar a {
@@ -219,28 +234,58 @@ img.pattern-finder-preview {
 	box-shadow: 0 2px 8px rgba(0,0,0,.28);
 	clear: both;
 	height: 2px;
-	margin-bottom: 20px;
-	width: 100vw;
+	margin-top:18px;
 }
 
 
 
 
+/**********************************************/
+/*                    Charts                  */
+/**********************************************/
 
 
-/* Search Input*/
 
-#search-container {
-	float: right;
-	margin-right: 10px;
-	width: 220px;
+/*.chart {
+	border: 2px solid rgb(8,82,107);
+	border-radius: 3px;
+	margin: auto;
+	max-width: 800px;
+	min-width: 400px;
+}
+*/
+
+
+#chart-box {
+	width: 45vw;
+	border: 2px solid rgb(8,82,107);
+	border-radius: 3px;
+}
+/*
+#chart-box {
+	margin: auto;
+	width: 98vw;
+}
+*/
+#ohlc-chart {
+	max-height: 500px;
+	min-width: 189.5px;
 }
 
+#volume-chart {
+	border-top: none;
+	max-height: 100px;
+	min-width: 61px;
+
+}
+
+
+/* Search Input
 
 
 /* Other Stuff Organize ME -------------------*/
 
-
+/*
 .collar-nav li {
 	display:inline-block;
 	text-align:center;
@@ -252,7 +297,7 @@ img.pattern-finder-preview {
 	border: 1px solid black;
 	border-radius: 2px;
 }
-
+*/
 
 .container {
 	max-width: 960px;
