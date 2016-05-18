@@ -5,20 +5,323 @@
 #44525C (68-82-92)
 #4A80A9 (74-128-169);*/
 
+/* Clear Browser */
+/* This should be unnecessary with Bootstrap 
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 
-/* Sticky footer styles
--------------------------------------------------- */
+/**********************************************/
+/*                   Basic                    */
+/**********************************************/
+/* Basic */
+
 html {
   position: relative;
   min-height: 100%;
 }
 body {
   /* Margin top by nav height */
-  margin-top: 80px;	
+  margin-top: 120px;	
   /* Margin bottom by footer height */
   margin-bottom: 240px;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gentium Book Basic', serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+p, li {
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.2;
+}
+
+input {
+
+  font-family: 'Work Sans', sans-serif;
+  /*font: 11px BlinkMacSystemFont;*/
+}
+
+
+
+/**********************************************/
+/*                    Navbar                  */
+/**********************************************/
+
+/* Navbar */
+
+.navbar {
+	background-color: #4A80A9;
+	height: 80px;
+	position:absolute;
+	padding-top:0px;
+}
+
+
+.navbar.navbar-fixed-top{
+	margin-bottom:0px;
+}
+
+
+.navbar-header{
+	display:block;
+}
+
+
+.navbar img {
+	max-height: 60px;
+	float: left;
+	margin-right: 5px;
+}
+
+.desktop-brow-nav ul {
+	display:inline-block;
+	float: right;
+}
+
+.desktop-brow-nav li {
+	display:inline-block;
+	margin-top:28px;
+	padding-left:20px;
+	padding-right:20px;
+	font-size:24px;
+	font-weight: bold;
+	color:#efefef;
+	float:right;
+}
+
+.nav-search {
+	display:inline-block;
+	float:right;
+	width:120px;
+	font-family: 'Work Sans', sans-serif;
+    font-weight: 150px;
+    margin-right: 15px;
+}
+
+.nav-search-box{
+	min-width:160px;
+}
+
+.nav-search-icon {
+	display:inline-block;
+	float:right;
+	margin-top:4px;
+}
+
+.navbar a {
+	color: #efefef;
+}
+
+.navbar a:hover {
+	color:#fff;
+}
+
+
+/* Ham Nav */
+
+.nav>li>a:focus,
+.nav>li>a:hover,
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+	background-color: #204d74;
+	color: #fff;
+}
+
+
+.navbar-toggle .icon-bar {
+	background-color: #efefef;
+}
+
+
+/**********************************************/
+/*          Home Page: Search Block           */
+/**********************************************/
+
+img.pattern-finder-preview {
+	max-width:350px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 15px 0;
+}
+
+.form-group {
+	margin-top:10px;
+}
+
+.stock-search-content {
+	margin:auto;
+	margin-top:30px;
+}
+
+.stock-search-home {
+	display: block;
+	text-align:center;
+	margin: 20px auto;
+}
+
+/**********************************************/
+/*                Pattern Finder              */
+/**********************************************/
+
+
+.banner {
+	background: rgb(8,82,107);
+	box-shadow: 0 2px 8px rgba(0,0,0,.28);
+	clear: both;
+	height: 2px;
+	margin-top:18px;
+}
+
+
+
+
+/**********************************************/
+/*                    Charts                  */
+/**********************************************/
+
+
+
+/*.chart {
+	border: 2px solid rgb(8,82,107);
+	border-radius: 3px;
+	margin: auto;
+	max-width: 800px;
+	min-width: 400px;
+}
+*/
+
+
+#chart-box {
+	width: 50vw;
+	border: 2px solid rgb(8,82,107);
+	border-radius: 3px;
+}
+/*
+#chart-box {
+	margin: auto;
+	width: 98vw;
+}
+*/
+#ohlc-chart {
+	max-height: 500px;
+	min-width: 189.5px;
+}
+
+#volume-chart {
+	border-top: none;
+	max-height: 100px;
+	min-width: 61px;
+
+}
+
+
+/* Search Input
+
+
+/* Other Stuff Organize ME -------------------*/
+
+/*
+.collar-nav li {
+	display:inline-block;
+	text-align:center;
+	padding-bottom: 10px;
+	padding-top:10px;
+	margin-bottom:10px;
+	margin-top:0px;
+	font-size: 24px;
+	border: 1px solid black;
+	border-radius: 2px;
+}
+*/
+
+.container {
+	max-width: 960px;
+}
+
+
+/* Education Section (hidden currently)
+.education {
+	background-color: #A6C8E1;
+	padding-top:20px;
+}
+
+.education li {
+	height: 250px;
+}
+*/
+
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -38,60 +341,18 @@ body {
 
 
 
-
-.container {
-	max-width: 960px;
+/* More footer styles */
+.footer ul {
+	margin-bottom: 0px;
 }
 
-.btn-lg {
-}
 
-.education {
-	background-color: #A6C8E1;
-	padding-top:20px;
-}
 
-.education li {
-	height: 250px;
-}
 
-.research {
 
-}
-
-.navbar img {
-	max-height: 21px;
-	float: left;
-	margin-right: 5px;
-}
-
-.navbar {
-	background-color: #4A80A9;
-}
-
-.navbar a {
-	color: #efefef;
-}
-
-.navbar a:hover {
-	color:#fff;
-}
-
-.nav>li>a:focus,
-.nav>li>a:hover,
-.nav .open>a,
-.nav .open>a:focus,
-.nav .open>a:hover,
-.dropdown-menu>li>a:focus,
-.dropdown-menu>li>a:hover {
-	background-color: #204d74;
-	color: #fff;
-}
-
-.navbar-toggle .icon-bar {
-	background-color: #efefef;
-}
-
+/*********************************************/
+/*               Media Queries               */
+/*********************************************/
 
 /*------------ Tablets & Desktop ------------*/
 @media only screen and (min-width: 992px) {

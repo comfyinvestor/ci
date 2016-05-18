@@ -98,6 +98,7 @@ var buildCharts = {
     );
   
     // Handle stock chart layout
+
     stockFig.layout.margin = {l: 60, r: 30, t: 50, b: 30};
     stockFig.layout.yaxis = {title: chartType === 'stock' ? 'Adjusted Stock Price ($)     ' : 'Price ($)     '};
     //stockFig.layout.title = chartType === 'stock' ? formattedData[6].name.slice(0, formattedData[6].name.indexOf(')') + 1) + ' - Weekly' : 'S&P 500 - Daily';
