@@ -209,6 +209,34 @@ img.pattern-finder-preview {
 	margin: 20px auto;
 }
 
+/**********************************************/
+/*                Pattern Finder              */
+/**********************************************/
+
+
+.banner {
+	background: rgb(8,82,107);
+	box-shadow: 0 2px 8px rgba(0,0,0,.28);
+	clear: both;
+	height: 2px;
+	margin-bottom: 20px;
+	width: 100vw;
+}
+
+
+
+
+
+
+/* Search Input*/
+
+#search-container {
+	float: right;
+	margin-right: 10px;
+	width: 220px;
+}
+
+
 
 /* Other Stuff Organize ME -------------------*/
 
