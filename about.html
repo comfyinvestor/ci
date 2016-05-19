@@ -3,7 +3,7 @@
   <head>
     <!--  -->
     <title>comfyinvestor - get comfy and learn to build wealth</title>
-    <meta name="description" content="This is a place for new investors to find resources and build a confident understanding of personal finance and investing."
+    <meta name="description" content="Use comfyinvestor's stock chart analysis tool and guides to build your understanding of price-volume charts and technical buy points."
     <meta charset="utf-8">
 
     <!-- Is this just for IE? -->
@@ -12,152 +12,112 @@
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="stylesheets/bootstrap.css">
-    <!-- Custom Comfy Styles -->
+    <!-- comfystyles -->
     <link rel="stylesheet" href="stylesheets/style.css">
-    <!-- Animation CSS -->
-    <link rel="stylesheet" href="stylesheets/animation.css">
-
+    <!--<link rel="stylesheet" href="stylesheets/chart-analysis.css">
+    -->
     <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:700' rel='stylesheet' type='text/css'>
 
+    <!-- Favicons -->
+    <link href="assets/favicon.jpg" rel="icon" type="image/x-icon" />
+
+    <!-- Plot.ly JS -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.rawgit.com/etpinard/plotlyjs-finance/master/plotlyjs-finance.js"></script>
   </head>
-<body>
 
-<!-- Nav Bar -->
+  <body>
+
+    <!-- Nav Bar -->
     <div class='navbar navbar-fixed-top'>
         <div class='container'>
-                <a href="#" class='navbar-brand'>
-                <!--
-                    <img class="logo" src="http://imgur.com/5jYrDkK.png" alt="ComfyInvestor Logo">
-                -->
+                <a href="http://comfyinvestor.com" class='navbar-brand'>
                     <img class="logo" src="images/ci-logo-2.png" alt="ComfyInvestor Logo">
                 </a>
 
-                <!--class='navbar-toggle collapsed'-->
-                <button id="ham-nav" class='navbar-toggle collapsed' type='button'  data-toggle='dropdown' data-target='navbar-collapse' aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class='icon-bar'></span>
-                    <span class='icon-bar'></span>
-                    <span class='icon-bar'></span>
-                </button>
             <ul class="list-unstyled desktop-brow-nav">
-                <li><input type="text" class="form-control nav-search" id="stock" placeholder="TSLA"><!--<i class="glyphicon glyphicon-search"></i>--></li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="guides.html">guides</a></li>
-                <li><a href="about.html">chart analysis</a></li>
+                
+                <li>
+                    <div class="nav-search-box">
+                      <div>
+                        <div class="nav-search-icon">
+                          <i id="ticker-submit-button" class="glyphicon glyphicon-search button"></i>
+                        </div>
+                        <div>
+                          <input class="form-control nav-search" type="text" id="ticker-textbox" placeholder="Example: FB"/>
+                        </div>
+                      </div>
+                    </div>
+                  <!--
+                  <input type="text" class="form-control nav-search" id="stock" placeholder="TSLA"><i class="glyphicon glyphicon-search"></i>-->
+                </li>
+                
+                <li><a href="http://comfyinvestor.com/about.html">about</a></li>
+                <li><a href="http://comfyinvestor.com/guides.html">guides</a></li>
+                <li><a href="http://comfyinvestor.com/chart-analysis.html">chart analysis</a></li>
             </ul>
-            
-            <!--class='nav navbar-nav navbar-right dropdown-menu navbar-collapse'-->
-            <!--FIX
-            <ul role="menu" class='nav navbar-nav navbar-right dropdown-menu navbar-collapse' aria-labelledby="ham-nav">
-                <li><a href="chart-analysis">chart analysis</a></li>
-                <li><a href="guides">guides</a></li>
-                <li><a href="about-us">about</a></li>
-            </ul>
-            -->
         </div>
+<!-- Border/Shadowsberg -->
+    <div class="banner"></div>
+
     </div>
-<!-- Blog Teaser Section -->  
+
+<!-- Guides Section -->  
     <div class='container'>
         <div class='row'>
-            <!--
-            <h2>Recent Posts</h2>
-            -->
-            <div>
-                <h3>Understanding Price Corrections in Stocks</h3>
-                <div class='container'>
-                    <p>The cup with handle is one of the most common stock chart patterns. This guide covers in depth which key traits investors should look for in all cup with handles, as well as other traits that will help investors spot exceptional patterns.</p>
-                    <img>   
-                </div>
+            <h2>About comfyinvestor</h2>
+            <hr>
+            <div class='container'>
+                <p><b>comfyinvestor is a site created to educate and empower new investors.</b></p>
+                <p> we want to make learning to invest straight forward by providing informative guides and helpful research and analysis tools.</p>
+                <p>a key component of comfyinvestor's philosophy is a belief in numbers and statistics before speculation. the majority of information you will find on comfyinvestor is rooted in data, facts, and analysis.</p>
+                <img>   
             </div>
-            <div>
-                <h3>How to Recognize a Cup Base</h3>
-                <div class='container'>
-                    <p>The cup with handle is one of the most common stock chart patterns. This guide covers in depth which key traits investors should look for in all cup with handles, as well as other traits that will help investors spot exceptional patterns.</p>
-                    <img class='hidden-sm hidden-xs' src="">
-                </div>
+            <h2>Team</h2>
+            <hr>
+            <div class='container'>
+                <p>The comfyinvestor team is a tight-knit unit comprised of 2 dudes named Mike. Both Mikes have over 10 years of investing experience and are passionate researchers of different strategies and concepts of the financial markets.</p>
+                <img class='hidden-sm hidden-xs' src="">
             </div>
-
-            <!--
-            <div>
-                <h3>More Like 'Wash Sale <i>Doesn't</i> Rule'</h3>
-                <div class='container'>
-                    <p>Did you know that you could pay a hefty penalty when you purchase a security that you've sold within the last 30 days. Avoid getting bit by this "archaine taxlaw" intended to prevent institutions and investors from selling their holdings for tax purposes. <a href="http://wastedpotentialz.com/2010/04/they-should-call-it-the-wash-sale-doesnt-rule/">Link</a></p>
-                    <img class='hidden-sm hidden-xs' src="">
-                </div>
-            </div>
-            <div>
-                <h3>Market Cycles: How Do Industry Groups Exchange Leadership?</h3>
-                <div class='container'>
-                    <p>Industry groups will continue to fight for leadership in the ever changing stock market. Understanding the factors that control this can help investors understand which industries are poised to lead or destined to crumble.</p>
-                    <img class='hidden-sm hidden-xs' src="">
-                </div>
-            </div>
-            -->
         </div>
     </div>
 <!-- Footer Section -->  
-            <div class='footer'>
-              <div class='container'>
-                <div class='row'>
-                  <div class='col-sm-4 col-xs-12'>
-                    <h4>Our Philosophy</h4>
-                    <p>investing can change your life<br>
-                    learning to invest should be easy<br>
-                    we want to make investing comfy</p>
-                    <!-- comfy is the best way to learn?-->
-                    <!--
-                    <a href='register.html'>Make and account today</a>!</p>
-                    -->
-                    <p><a href='about.html'>More About Us <i class='glyphicon glyphicon-arrow-right'></i></a></p>
-                  </div>
+    <div class='footer'>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-sm-4 col-xs-12'>
+            <h4>Our Philosophy</h4>
+            <p>investing can change your life<br>
+            & learning to invest can be easy<br></p>
+            <p><a href='http://comfyinvestor.com/'>More About Us <i class='glyphicon glyphicon-arrow-right'></i></a></p>
+          </div>
 
-                  <div class='col-sm-2 col-sm-offset-1 col-xs-6'>
-                    <h4>Links</h4>
-                    <ul class='list-unstyled'>
-                      <li><a href='#'>Home</a></li>
-                      <li><a href='chart-analysis.html'>Chart Analysis</a></li>
-                      <li><a href='guides.html'>Guides</a></li>
-                      <li><a href='about-us.html'>About</a></li>
-                      <!--
-                      <li><a href='#'>My Portfolio</a></li>
-                      <li><a href='#'>Glossary</a></li>
-                      -->
-                    </ul>
-                  </div>
-<!--
-                  <div class='clearfix visible-xs'></div>
--->
-                  <!--
-                  <div class='col-sm-2 col-xs-6'>
-                    <h4>Stay in Touch</h4>
-                    <ul class='list-unstyled'>
-                      <li><a href='#'>Contact Us</a></li>
-                      
-                      <li><a href='#'>Blog</a></li>
-                      <li><a href='#'>Twitter</a></li>
-                      <li><a href='#'>Facebook</a></li>
-                      
-                    </ul>
-                  </div>
-                  -->
+          <div class='col-sm-2 col-sm-offset-1 col-xs-6'>
+            <h4>Links</h4>
+            <ul class='list-unstyled'>
+              <li><a href='http://comfyinvestor.com'>Home</a></li>
+              <li><a href='http://comfyinvestor.com/chart-analysis.html'>Chart Analysis</a></li>
+              <li><a href='http://comfyinvestor.com/guides.html'>Guides</a></li>
+              <li><a href='http://comfyinvestor.com/about-us.html'>About</a></li>
+            </ul>
+          </div>
 
-                  <div class='col-sm-4 col-sm-offset-1 col-xs-6'>
-                    <h4>Contact Us</h4>
-                    <ul class='list-unstyled'>
-                      <li><i class='glyphicon glyphicon-globe'></i> Santa Barbara, CA</li>
-                      <li><i class='glyphicon glyphicon-envelope'></i> <a href='mailto:mjlafirenza@gmail.com'>info@comfyinvestor.com</a></li>
-                      <!--
-                      <li><i class='glyphicon glyphicon-phone'></i> 1-818-635-XXXX</li>
-                      -->
-                    </ul>
-                    <br>
-                    <p>comfyshorts, inc. &copy; 2016</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+          <div class='col-sm-4 col-sm-offset-1 col-xs-6'>
+            <h4>Contact Us</h4>
+            <ul class='list-unstyled'>
+              <li><i class='glyphicon glyphicon-globe'></i> Santa Barbara, CA</li>
+              <li><i class='glyphicon glyphicon-envelope'></i> <a href='mailto:mjlafirenza@gmail.com'>info@comfyinvestor.com</a></li>
+            </ul>
+            <br>
+            <p>comfyshorts, inc. &copy; 2016</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
