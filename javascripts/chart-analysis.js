@@ -13,20 +13,29 @@ var buildData = {
       'https://www.quandl.com/api/v3/datasets/YAHOO/INDEX_GSPC.json?api_key=fyWKH12nMF4VuWFaXARN&limit=100';
     */
     var today = new Date();
-    var last = new Date(today.getYear - 2, today.getMonth, today.getDate);
+    //var last = new Date(today.getFullYear() - 2, today.getMonth(), today.getDate());
+    var last = new Date(today.getTime() - 43200000);
     var ticker = chartType === 'stock' ? document.getElementById('ticker-textbox').value.toString().toUpperCase() : '^GSPC';
+    console.log('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22' +
+      ticker +
+      '%22%20and%20startDate%20%3D%20%22' +
+      last.getFullYear() + '-' + last.getMonth() + '-' + last.getDate() +
+      '%22%20and%20endDate%20%3D%20%22' +
+      today.getFullYear() + '-' + today.getMonth() + '-' + today.getMonth() +
+      '%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=');
     return 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22' +
       ticker +
       '%22%20and%20startDate%20%3D%20%22' +
-      last.getYear + '-' + last.getMonth + '-' + last.getDate +
+      last.getFullYear() + '-' + last.getMonth() + '-' + last.getDate() +
       '%22%20and%20endDate%20%3D%20%22' +
-      today.getYear + '-' + today.getMonth + '-' + today.getMonth +
+      today.getFullYear() + '-' + today.getMonth() + '-' + today.getMonth() +
       '%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=';
   },
   
   // Parse the response data from the http request
   parseData: function(response) {
-    return JSON.parse(response).dataset;
+    //return JSON.parse(response).dataset;
+    return JSON.parse(response);
   },
   
   // Format the parsed data
@@ -76,6 +85,7 @@ var buildData = {
     });
     
     reformattedStockData[6] = dataset;
+    console.log(reformattedStockData);
     return reformattedStockData;
   }
 };
@@ -282,6 +292,7 @@ var openHttpRequest = function (chartType, dataFuncs, chartFuncs) {
     if (httpRequest.readyState === 4 && httpRequest.status === 200) {
       document.getElementById('ticker-textbox').placeholder = 'Example: FB';
       var responseData = dataFuncs.parseData(httpRequest.responseText);
+      console.log(responseData);
       var formattedData = dataFuncs.formatData(chartType, responseData);
       chartFuncs.buildOhlcChart(chartType, formattedData, chartFuncs.findCups, chartFuncs.buildAnnotations, chartFuncs.clone);
       chartFuncs.buildVolumeChart(formattedData);
