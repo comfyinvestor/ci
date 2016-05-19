@@ -94,6 +94,7 @@ h4 {
 p, li {
   font-family: 'Work Sans', sans-serif;
   line-height: 1.2;
+  font-size: 16px;
 }
 
 input {
@@ -102,6 +103,9 @@ input {
   /*font: 11px BlinkMacSystemFont;*/
 }
 
+.container {
+	max-width: 960px;
+}
 
 
 /**********************************************/
@@ -227,7 +231,7 @@ img.pattern-finder-preview {
 /**********************************************/
 /*                Pattern Finder              */
 /**********************************************/
-
+/*************ADD TO SEPARATE FILE*************/
 
 .banner {
 	background: rgb(8,82,107);
@@ -299,9 +303,6 @@ img.pattern-finder-preview {
 }
 */
 
-.container {
-	max-width: 960px;
-}
 
 
 /* Education Section (hidden currently)
@@ -316,9 +317,12 @@ img.pattern-finder-preview {
 */
 
 
+/**********************************************/
+/*                    Charts                  */
+/**********************************************/
 
-/* Sticky footer styles
--------------------------------------------------- */
+
+/************* Sticky footer styles ***********/
 
 
 
@@ -341,9 +345,13 @@ img.pattern-finder-preview {
 
 
 
-/* More footer styles */
+/************** More footer styles ***********/
 .footer ul {
 	margin-bottom: 0px;
+}
+
+.footer p, li {
+	font-size: 14px;
 }
 
 
