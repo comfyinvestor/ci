@@ -235,7 +235,10 @@ img.pattern-finder-preview {
 /*************ADD TO SEPARATE FILE*************/
 
 
-
+.guide-intro {
+	font-style: italic;
+	font-size:14px;
+}
 
 
 
