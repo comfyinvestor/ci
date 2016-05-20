@@ -16,13 +16,6 @@ var buildData = {
     //var last = new Date(today.getFullYear() - 2, today.getMonth(), today.getDate());
     var last = new Date(today.getTime() - 43200000);
     var ticker = chartType === 'stock' ? document.getElementById('ticker-textbox').value.toString().toUpperCase() : '^GSPC';
-    console.log('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22' +
-      ticker +
-      '%22%20and%20startDate%20%3D%20%22' +
-      last.getFullYear() + '-' + last.getMonth() + '-' + last.getDate() +
-      '%22%20and%20endDate%20%3D%20%22' +
-      today.getFullYear() + '-' + today.getMonth() + '-' + today.getMonth() +
-      '%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=');
     return 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22' +
       ticker +
       '%22%20and%20startDate%20%3D%20%22' +
@@ -57,6 +50,7 @@ var buildData = {
     */
     var reformattedStockData = [ [], [], [], [], [], [] ];
     var week = [];
+    week.dataStart = true;
     
     dataset.query.results.quote.forEach(function(dayObjectData) { 
       var open = dayObjectData.Open * dayObjectData.Adj_Close / dayObjectData.Close;
@@ -66,8 +60,8 @@ var buildData = {
       var date = dayObjectData.Date;
       var vol = dayObjectData.Volume;
       
-      if (Date(date).getDay === 1 && week.length > 0) {
-        for (let i = 0; i < week.length; i++) reformattedStockData[i] = week[i];
+      if ((new Date(date)).getDay() === 1 && !week.dataStart) {
+        for (let i = 0; i < week.length; i++) reformattedStockData[i].unshift(week[i]);
         week[0] = open;
         week[1] = high;
         week[2] = low;
@@ -82,9 +76,11 @@ var buildData = {
       week[3] = close;
       week[4] = date.split('-');
       week[5] = week[5] === undefined ? vol : week[5] + vol;
+      week.dataStart = false;
     });
     
     reformattedStockData[6] = dataset;
+    console.log('Reformatted Stock Data:')
     console.log(reformattedStockData);
     return reformattedStockData;
   }
@@ -292,7 +288,6 @@ var openHttpRequest = function (chartType, dataFuncs, chartFuncs) {
     if (httpRequest.readyState === 4 && httpRequest.status === 200) {
       document.getElementById('ticker-textbox').placeholder = 'Example: FB';
       var responseData = dataFuncs.parseData(httpRequest.responseText);
-      console.log(responseData);
       var formattedData = dataFuncs.formatData(chartType, responseData);
       chartFuncs.buildOhlcChart(chartType, formattedData, chartFuncs.findCups, chartFuncs.buildAnnotations, chartFuncs.clone);
       chartFuncs.buildVolumeChart(formattedData);
