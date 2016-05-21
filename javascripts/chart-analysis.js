@@ -13,9 +13,10 @@ var buildData = {
       'https://www.quandl.com/api/v3/datasets/YAHOO/INDEX_GSPC.json?api_key=fyWKH12nMF4VuWFaXARN&limit=100';
     */
     var today = new Date();
-    //var last = new Date(today.getFullYear() - 2, today.getMonth(), today.getDate());
-    var last = new Date(today.getTime() - 43200000);
+    //var last = new Date(today.getTime() - 43200000000);
+    var last = new Date(today.getTime() - 38880000000);
     var ticker = chartType === 'stock' ? document.getElementById('ticker-textbox').value.toString().toUpperCase() : '^GSPC';
+    
     return 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22' +
       ticker +
       '%22%20and%20startDate%20%3D%20%22' +
