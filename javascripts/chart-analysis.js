@@ -13,17 +13,29 @@ var buildData = {
       'https://www.quandl.com/api/v3/datasets/YAHOO/INDEX_GSPC.json?api_key=fyWKH12nMF4VuWFaXARN&limit=100';
     */
     var today = new Date();
-    //var last = new Date(today.getTime() - 43200000000);
     var last = new Date(today.getTime() - 38880000000);
+    //var last = new Date(today.getTime() - 43113600000);
     var ticker = chartType === 'stock' ? document.getElementById('ticker-textbox').value.toString().toUpperCase() : '^GSPC';
     
+    var todayMonth = /^\d$/.test(today.getMonth().toString()) ? '0' + today.getMonth() : today.getMonth();
+    var todayDate = /^\d$/.test(today.getDate().toString()) ? '0' + today.getDate() : today.getDate();
+    var lastMonth = /^\d$/.test(last.getMonth().toString()) ? '0' + last.getMonth() : last.getMonth();
+    var lastDate = /^\d$/.test(last.getDate().toString()) ? '0' + last.getDate() : last.getDate();
+    
+    console.log('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22' +
+      ticker +
+      '%22%20and%20startDate%20%3D%20%22' +
+      last.getFullYear() + '-' + lastMonth + '-' + lastDate +
+      '%22%20and%20endDate%20%3D%20%22' +
+      today.getFullYear() + '-' + todayMonth + '-' + todayDate +
+      '%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys');
     return 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22' +
       ticker +
       '%22%20and%20startDate%20%3D%20%22' +
-      last.getFullYear() + '-' + last.getMonth() + '-' + last.getDate() +
+      last.getFullYear() + '-' + lastMonth + '-' + lastDate +
       '%22%20and%20endDate%20%3D%20%22' +
-      today.getFullYear() + '-' + today.getMonth() + '-' + today.getMonth() +
-      '%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=';
+      today.getFullYear() + '-' + todayMonth + '-' + todayDate +
+      '%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys';
   },
   
   // Parse the response data from the http request
