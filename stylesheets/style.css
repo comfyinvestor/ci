@@ -219,6 +219,10 @@ input {
 /*          Home Page: Search Block           */
 /**********************************************/
 
+.research {
+	background-color: #ECECEA;
+}
+
 img.pattern-finder-preview {
 	max-width:350px;
 	display:block;
