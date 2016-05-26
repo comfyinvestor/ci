@@ -103,8 +103,22 @@ input {
   /*font: 11px BlinkMacSystemFont;*/
 }
 
+
+
+/**********************************************/
+/*               Bootstrap Mod                */
+/**********************************************/
+
 .container {
 	max-width: 960px;
+}
+
+.well {
+  border:1px solid #ccc;
+  border-radius: 0;
+  background-color:#fff;
+  box-shadow: -2px 2px 2px #ddd;
+  margin:5px;
 }
 
 
@@ -246,7 +260,7 @@ img.pattern-finder-preview {
 }
 
 .key-takeaway {
-	
+
 }
 
 
