@@ -37,7 +37,8 @@ $("#stock").submit(function(){
     var mystock = $("#stock").innerHTML;
     var $mystock2 = $(event.target).find('#stock');
 
-    alert(mystock);
+    console.log(mystock);
+    console.log($mystock2);
     // Check browser support
 if (typeof(Storage) !== "undefined") {
     // Store
