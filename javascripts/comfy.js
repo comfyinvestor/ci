@@ -36,6 +36,7 @@ $("#stock").submit(function(){
 //$("#stock").submit(function(){
     var mystock = $("#stock").innerHTML;
     var $mystock2 = $(event.target).find('#stock');
+    debugger;
 
     console.log(mystock);
     console.log($mystock2);
