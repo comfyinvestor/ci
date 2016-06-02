@@ -66,7 +66,7 @@ html {
 }
 body {
   /* Margin top by nav height */
-  margin-top: 120px;	
+  margin-top: 80px;	
   /* Margin bottom by footer height */
   margin-bottom: 240px;
 }
@@ -225,14 +225,18 @@ input {
 .welcome.row {
 	margin-right: 0px;
 	margin-left:0px;
+	max-height:400px;
+	overflow:hidden;
 }
+
 
 .welcome .welcome-pic-right {
 	float:right;
+	max-width:60%;
 }
 
 .welcome .welcome-pic-left {
-	
+	max-width:40%;
 }
 
 /**********************************************/
