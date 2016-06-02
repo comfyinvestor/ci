@@ -228,6 +228,7 @@ input {
 	margin-bottom:20px;
 	max-height:300px;
 	overflow:hidden;
+	border-bottom: 1px solid #bbbbbb;
 }
 
 
@@ -238,6 +239,7 @@ input {
 
 .welcome .welcome-pic-left {
 	max-width:40%;
+	border-right: 1px solid #bbbbbb;
 }
 
 /**********************************************/
