@@ -229,12 +229,14 @@ input {
 	max-height:300px;
 	overflow:hidden;
 	border-bottom: 1px solid #bbbbbb;
+	background-image: url("images/newspaper-on-wooden-table-md.jpg");
 }
 
 
 .welcome .welcome-pic-right {
 	float:right;
 	max-width:60%;
+
 }
 
 .welcome .welcome-pic-left {
@@ -248,6 +250,9 @@ input {
 
 .research {
 	background-color: #ECECEA;
+	padding-top:30px;
+	background-image: url("images/newspaper-on-wooden-table-md.jpg");
+	padding-bottom:30px;
 }
 
 img.pattern-finder-preview {
