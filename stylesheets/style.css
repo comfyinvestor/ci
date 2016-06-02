@@ -69,7 +69,6 @@ body {
   margin-top: 80px;	
   /* Margin bottom by footer height */
   margin-bottom: 240px;
-
   background-image: url("/images/newspaper-on-wooden-table-2.jpg");
 }
 
@@ -253,7 +252,6 @@ input {
 .research {
 	background-color: #ECECEA;
 	padding-top:30px;
-	background-image: url("/images/newspaper-on-wooden-table-2.jpg");
 	padding-bottom:30px;
 }
 
