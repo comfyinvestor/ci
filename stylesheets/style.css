@@ -219,6 +219,23 @@ input {
 
 
 /**********************************************/
+/*          Home Page: Welcome                */
+/**********************************************/
+
+.welcome.row {
+	margin-right: 0px;
+	margin-left:0px;
+}
+
+.welcome .welcome-pic-right {
+	float:right;
+}
+
+.welcome .welcome-pic-left {
+	
+}
+
+/**********************************************/
 /*          Home Page: Search Block           */
 /**********************************************/
 
