@@ -225,7 +225,8 @@ input {
 .welcome.row {
 	margin-right: 0px;
 	margin-left:0px;
-	max-height:400px;
+	margin-bottom:20px;
+	max-height:300px;
 	overflow:hidden;
 }
 
