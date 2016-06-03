@@ -25,7 +25,7 @@
 
 
 $(window).scroll(function() {
-  if ($(document).scrollTop() > 200) {
+  if ($(document).scrollTop() > 140) {
     $('nav').addClass('shrink');
     $('nav #large-logo').addClass('hide');
     $('nav #small-logo').removeClass('hide');
