@@ -284,6 +284,14 @@ nav.navbar{
 /*          Home Page: Search Block           */
 /**********************************************/
 
+.welcome-text {
+	color:#fff;
+	font-size:42px;
+	display:block;
+	text-align:center;
+	padding-bottom: 100px;
+}
+
 .research {
 /*	background-color: #ECECEA;     */
 	padding-top:250px;
