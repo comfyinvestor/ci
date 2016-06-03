@@ -70,6 +70,7 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 240px;
   background-image: url("/images/newspaper-on-table-md.jpg");
+  background-size: 115%;
 }
 
 h1, h2, h3, h4, h5, h6 {
