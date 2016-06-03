@@ -27,8 +27,12 @@
 $(window).scroll(function() {
   if ($(document).scrollTop() > 200) {
     $('nav').addClass('shrink');
+    $('nav #large-logo').addClass('hide');
+    $('nav #small-logo').removeClass('hide');
   } else {
     $('nav').removeClass('shrink');
+    $('nav #small-logo').addClass('hide');
+    $('nav #large-logo').removeClass('hide');
   }
 });
 
