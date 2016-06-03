@@ -237,6 +237,10 @@ nav.navbar.shrink {
   height: 80px;
 }
 
+.navlinks {
+	margin-top:118px;
+}
+
 nav.navbar{
    height:250px;
    background-color: #4A80A9;
