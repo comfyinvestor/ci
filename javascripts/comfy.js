@@ -29,10 +29,12 @@ $(window).scroll(function() {
     $('nav').addClass('shrink');
     $('nav #large-logo').addClass('hide');
     $('nav #small-logo').removeClass('hide');
+    $('nav nav-links').removeClass('nav-links-low');
   } else {
     $('nav').removeClass('shrink');
     $('nav #small-logo').addClass('hide');
     $('nav #large-logo').removeClass('hide');
+    $('nav nav-links').addClass('nav-links-low');
   }
 });
 
