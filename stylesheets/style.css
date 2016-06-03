@@ -139,6 +139,7 @@ input {
 	height: 80px;
 	/*position:absolute;*/
 	padding-top:0px;
+	box-shadow: 0 2px 8px rgba(0,0,0,.28);
 }
 
 
@@ -233,6 +234,7 @@ input {
 /************  Nav Animation ************/
 
 nav.navbar {
+
 }
 
 nav.navbar.shrink {
