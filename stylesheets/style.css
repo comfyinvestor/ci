@@ -198,7 +198,7 @@ input {
 
 
 /* Ham Nav */
-
+/* Not working
 .nav>li>a:focus,
 .nav>li>a:hover,
 .nav .open>a,
@@ -214,6 +214,7 @@ input {
 .navbar-toggle .icon-bar {
 	background-color: #efefef;
 }
+*/
 
 /******** Navbar Image *********/
 .navbar img.logo-sm {
