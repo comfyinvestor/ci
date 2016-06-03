@@ -139,7 +139,6 @@ input {
 	height: 80px;
 	/*position:absolute;*/
 	padding-top:0px;
-	box-shadow: 0 2px 8px rgba(0,0,0,.28);
 }
 
 
@@ -233,9 +232,6 @@ input {
 
 /************  Nav Animation ************/
 
-nav.navbar {
-
-}
 
 nav.navbar.shrink {
   height: 80px;
@@ -248,6 +244,7 @@ nav.navbar.shrink {
 nav.navbar{
    height:180px;
    background-color: #4A80A9;
+   box-shadow: 0 2px 8px rgba(0,0,0,.28);
    background-image: url("images/newspaper-on-wooden-table.jpg");
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
