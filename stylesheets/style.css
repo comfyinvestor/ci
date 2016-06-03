@@ -158,6 +158,12 @@ input {
 	margin-right: 5px;
 }
 
+.navbar img.logo-sm {
+	max-height: 200px;
+	float: left;
+	margin-right: 5px;
+}
+
 .desktop-brow-nav ul {
 	display:inline-block;
 	float: right;
