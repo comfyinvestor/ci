@@ -105,7 +105,9 @@ input {
   /*font: 11px BlinkMacSystemFont;*/
 }
 
-
+.hide {
+	display:none;
+}
 
 /**********************************************/
 /*               Bootstrap Mod                */
