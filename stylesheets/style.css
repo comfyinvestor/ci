@@ -223,9 +223,6 @@ input {
 /************  Nav Animation ************/
 
 nav.navbar {
-	height:250px;
-	background-image: url("images/newspaper-on-wooden-table.jpg");
-	background-color:#4A80A9;
 }
 
 nav.navbar.shrink {
@@ -233,8 +230,9 @@ nav.navbar.shrink {
 }
 
 nav.navbar{
-  background-color:#ccc;
-   // Animation
+   height:250px;
+   background-image: url("images/newspaper-on-wooden-table.jpg");
+   background-color: #4A80A9;
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
 }
