@@ -225,6 +225,7 @@ input {
 nav.navbar {
 	height:250px;
 	background-image: url("images/newspaper-on-wooden-table.jpg");
+	background-color:#4A80A9;
 }
 
 nav.navbar.shrink {
