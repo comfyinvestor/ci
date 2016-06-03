@@ -125,7 +125,9 @@ input {
   margin:5px;
 }
 
-
+.navbar-default {
+	border:none;
+}
 
 
 /**********************************************/
